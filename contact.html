@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact UrbanGent for sizing advice, delivery support, returns and product questions."
+    />
+    <meta name="theme-color" content="#111827" />
+    <title>Contact & Support | UrbanGent</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Sora:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css?v=20260810-fonts" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="announcement-bar">
+      Free nationwide delivery on orders from 1,500,000 VND · Easy 14-day
+      returns
+    </div>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top"
+      aria-label="Main navigation"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="UrbanGent home"
+          ><span class="brand-mark" aria-hidden="true">UG</span
+          ><span>UrbanGent</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto align-items-lg-center mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#products">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contact.html"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html"
+                >Cart <span class="cart-pill cart-count">0</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <div class="container position-relative" style="z-index: 1">
+        <span class="section-eyebrow">Customer care</span>
+        <h1 class="page-title">How can we help?</h1>
+        <p class="section-copy mb-3">
+          Ask about sizing, products, delivery or returns. Our team normally
+          replies within one business day.
+        </p>
+        <ol class="breadcrumb-clean" aria-label="Breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Contact</li>
+        </ol>
+      </div>
+    </header>
+
+    <main id="main-content" class="section-space">
+      <div class="container">
+        <div id="alertBox" class="alert-placeholder" aria-live="polite"></div>
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-7">
+            <section class="form-card" aria-labelledby="contact-form-title">
+              <span class="product-category">Send a message</span>
+              <h2 class="h3 mt-2 mb-4" id="contact-form-title">
+                Tell us what you need
+              </h2>
+              <form id="contactForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="contactName" class="form-label"
+                      >Full name <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="contactName"
+                      name="name"
+                      autocomplete="name"
+                      placeholder="Nguyen Van A"
+                      required
+                    />
+                    <div
+                      class="invalid-feedback"
+                      data-feedback-for="contactName"
+                    >
+                      Enter your full name.
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="contactEmail" class="form-label"
+                      >Email address <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="contactEmail"
+                      name="email"
+                      autocomplete="email"
+                      placeholder="name@example.com"
+                      required
+                    />
+                    <div
+                      class="invalid-feedback"
+                      data-feedback-for="contactEmail"
+                    >
+                      Enter a valid email address.
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="contactTopic" class="form-label"
+                      >Support topic <span class="text-danger">*</span></label
+                    >
+                    <select
+                      class="form-select"
+                      id="contactTopic"
+                      name="topic"
+                      required
+                    >
+                      <option value="">Choose a topic</option>
+                      <option value="size">Size and fit advice</option>
+                      <option value="product">Product information</option>
+                      <option value="delivery">
+                        Delivery and order status
+                      </option>
+                      <option value="returns">Returns and exchanges</option>
+                      <option value="other">Other question</option>
+                    </select>
+                    <div
+                      class="invalid-feedback"
+                      data-feedback-for="contactTopic"
+                    >
+                      Choose a support topic.
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="contactMessage" class="form-label"
+                      >Message <span class="text-danger">*</span></label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="contactMessage"
+                      name="message"
+                      rows="6"
+                      maxlength="600"
+                      placeholder="Include your order number if your question is about an existing order."
+                      required
+                    ></textarea>
+                    <div
+                      class="invalid-feedback"
+                      data-feedback-for="contactMessage"
+                    >
+                      Write at least 10 characters so we can help.
+                    </div>
+                    <div class="form-text">Maximum 600 characters.</div>
+                  </div>
+                  <div
+                    class="col-12 d-flex flex-wrap align-items-center gap-3 mt-4"
+                  >
+                    <button type="submit" class="btn btn-dark px-4">
+                      Send message
+                    </button>
+                    <span class="text-muted small"
+                      >Required fields are marked with *</span
+                    >
+                  </div>
+                </div>
+              </form>
+            </section>
+          </div>
+
+          <div class="col-lg-5">
+            <aside
+              class="content-card h-100"
+              aria-labelledby="store-info-title"
+            >
+              <span class="product-category">UrbanGent studio</span>
+              <h2 class="h3 mt-2" id="store-info-title">Visit or contact us</h2>
+              <p class="text-muted">
+                Try on the collection or speak with a style advisor during
+                opening hours.
+              </p>
+
+              <div class="contact-detail">
+                <span class="contact-icon" aria-hidden="true">A</span>
+                <div>
+                  <strong class="d-block">Address</strong
+                  ><span class="text-muted small"
+                    >123 Nguyen Hue, District 1, Ho Chi Minh City</span
+                  >
+                </div>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-icon" aria-hidden="true">P</span>
+                <div>
+                  <strong class="d-block">Phone</strong
+                  ><a class="text-muted small" href="tel:+84054247564"
+                    >+84 35 42475 64</a
+                  >
+                </div>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-icon" aria-hidden="true">E</span>
+                <div>
+                  <strong class="d-block">Email</strong
+                  ><a
+                    class="text-muted small"
+                    href="mailto:dangquocphi111@gmail.com"
+                    >dangquocphi111@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-icon" aria-hidden="true">H</span>
+                <div>
+                  <strong class="d-block">Opening hours</strong
+                  ><span class="text-muted small"
+                    >Monday–Sunday, 09:00–21:00</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="mt-4 p-3 rounded-3"
+                style="background: var(--brand-cream)"
+              >
+                <strong class="d-block mb-1">Need an urgent answer?</strong>
+                <span class="text-muted small"
+                  >Call during opening hours for immediate sizing and order
+                  support.</span
+                >
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer pt-5">
+      <div class="container">
+        <div class="row g-4 pb-4">
+          <div class="col-lg-6">
+            <h2 class="h4">UrbanGent</h2>
+            <p class="small mb-0">
+              Modern menswear for confident everyday style.
+            </p>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <h3 class="h6">Customer care</h3>
+            <a class="small d-block mb-2" href="contact.html">Contact us</a
+            ><a class="small" href="cart.html">Delivery & cart</a>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <h3 class="h6">Account</h3>
+            <a class="small d-block mb-2" href="login.html">Login</a
+            ><a class="small" href="register.html">Create account</a>
+          </div>
+        </div>
+        <div
+          class="footer-bottom py-3 d-flex flex-wrap justify-content-between gap-2 small"
+        >
+          <span>&copy; <span class="current-year">2026</span> UrbanGent.</span
+          ><a href="index.html">Back to home</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js?v=20260810"></script>
+  </body>
+</html>
