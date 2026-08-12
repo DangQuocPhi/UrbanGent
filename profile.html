@@ -20,9 +20,9 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css?v=20260810-fonts" />
+    <link rel="stylesheet" href="css/style.css?v=20260812-5" />
   </head>
-  <body>
+  <body data-requires-auth="true">
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="announcement-bar">
       Free nationwide delivery on orders from 1,500,000 VND · Easy 14-day
@@ -99,177 +99,77 @@
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-4">
-            <aside
-              class="form-card text-center h-100"
-              aria-labelledby="profile-name"
-            >
-              <div
-                class="profile-avatar"
-                id="profileInitials"
-                aria-hidden="true"
-              >
-                NA
-              </div>
-              <h2 class="h3 mb-1" id="profileName">Đặng Quốc Phi</h2>
-              <p class="text-muted">Gold member · Since 2025</p>
-              <span
-                class="badge rounded-pill px-3 py-2"
-                style="background: var(--brand-gold); color: var(--brand-ink)"
-                >1,240 loyalty points</span
-              >
+            <aside class="form-card text-center h-100" aria-labelledby="profile-name">
+              <div class="profile-avatar" id="profileInitials" aria-hidden="true">UG</div>
+              <h2 class="h3 mb-1" id="profileName">UrbanGent customer</h2>
+              <p class="text-muted">Customer member</p>
+              <span id="loyaltyPoints" class="badge rounded-pill px-3 py-2" style="background: var(--brand-gold); color: var(--brand-ink)">0 loyalty points</span>
               <div class="text-start mt-4">
-                <div class="d-flex justify-content-between small mb-2">
-                  <span>Gold progress</span><strong>72%</strong>
-                </div>
-                <div
-                  class="progress loyalty-progress"
-                  role="progressbar"
-                  aria-label="Gold membership progress"
-                  aria-valuenow="72"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <div class="progress-bar" style="width: 72%"></div>
-                </div>
-                <p class="text-muted small mt-2 mb-0">
-                  Spend 760,000 VND more to unlock the next reward.
-                </p>
+                <div class="d-flex justify-content-between small mb-2"><span>Reward progress</span><strong>Next milestone</strong></div>
+                <div class="progress loyalty-progress" role="progressbar" aria-label="Loyalty reward progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" id="loyaltyProgress" style="width: 0%"></div></div>
+                <p class="text-muted small mt-2 mb-0" id="loyaltyProgressText">500 more points to reach the next reward.</p>
               </div>
               <div class="d-grid gap-2 mt-4">
-                <a class="btn btn-dark" href="index.html#products"
-                  >Continue shopping</a
-                >
-                <a class="btn btn-outline-dark" href="contact.html"
-                  >Contact support</a
-                >
+                <a class="btn btn-dark" href="index.html#products">Continue shopping</a>
+                <a class="btn btn-outline-dark" href="contact.html">Contact support</a>
               </div>
             </aside>
           </div>
 
           <div class="col-lg-8">
             <section class="form-card" aria-labelledby="account-details-title">
-              <div
-                class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4"
-              >
-                <div>
-                  <span class="product-category">Account</span>
-                  <h2 class="h3 mt-2 mb-0" id="account-details-title">
-                    Personal details
-                  </h2>
+              <form id="profileForm" novalidate>
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
+                  <div><span class="product-category">Account</span><h2 class="h3 mt-2 mb-0" id="account-details-title">Personal details</h2></div>
+                  <div class="d-flex gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" id="editProfileButton">Edit profile</button>
+                    <button class="btn btn-outline-secondary btn-sm d-none" type="button" id="cancelProfileButton">Cancel</button>
+                    <button class="btn btn-dark btn-sm d-none" type="submit" id="saveProfileButton">Save changes</button>
+                  </div>
                 </div>
-                <span class="text-muted small">Account details</span>
-              </div>
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label" for="profileNameField"
-                    >Full name</label
-                  >
-                  <input
-                    class="form-control"
-                    id="profileNameField"
-                    value="Đặng Quốc Phi"
-                    readonly
-                  />
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="profileNameField">Full name</label>
+                    <input class="form-control" id="profileNameField" data-profile-editable autocomplete="name" readonly required>
+                    <div class="invalid-feedback" data-feedback-for="profileNameField">Enter your full name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="profileEmailField">Email</label>
+                    <input class="form-control" id="profileEmailField" data-profile-editable type="email" autocomplete="email" readonly required>
+                    <div class="invalid-feedback" data-feedback-for="profileEmailField">Enter a valid email address.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="profilePhoneField">Phone</label>
+                    <input class="form-control" id="profilePhoneField" data-profile-editable type="tel" autocomplete="tel" readonly>
+                    <div class="invalid-feedback" data-feedback-for="profilePhoneField">Enter a valid Vietnamese phone number.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="profileStyle">Preferred style</label>
+                    <select class="form-select" id="profileStyle" data-profile-editable disabled required><option value="Smart casual">Smart casual</option><option value="Business">Business</option><option value="Minimal">Minimal</option><option value="Casual">Casual</option></select>
+                    <div class="invalid-feedback" data-feedback-for="profileStyle">Choose your preferred style.</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="profileAddress">Delivery address</label>
+                    <textarea class="form-control" id="profileAddress" data-profile-editable rows="3" maxlength="180" autocomplete="street-address" readonly></textarea>
+                    <div class="invalid-feedback" data-feedback-for="profileAddress">Address must be 180 characters or fewer.</div>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="profileEmailField"
-                    >Email</label
-                  >
-                  <input
-                    class="form-control"
-                    id="profileEmailField"
-                    type="email"
-                    value="dangquocphi111@gmail.com"
-                    readonly
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="profilePhoneField"
-                    >Phone</label
-                  >
-                  <input
-                    class="form-control"
-                    id="profilePhoneField"
-                    value="0354247564"
-                    readonly
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="profileStyle"
-                    >Preferred style</label
-                  >
-                  <input
-                    class="form-control"
-                    id="profileStyle"
-                    value="Smart casual"
-                    readonly
-                  />
-                </div>
-                <div class="col-12">
-                  <label class="form-label" for="profileAddress"
-                    >Delivery address</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="profileAddress"
-                    rows="2"
-                    readonly
-                  >
-123 Nguyen Hue, District 1, Ho Chi Minh City</textarea
-                  >
-                </div>
-              </div>
+              </form>
             </section>
 
             <section class="form-card mt-4" aria-labelledby="orders-title">
-              <div
-                class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3"
-              >
-                <div>
-                  <span class="product-category">Purchase history</span>
-                  <h2 class="h3 mt-2 mb-0" id="orders-title">Recent orders</h2>
-                </div>
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                <div><span class="product-category">Purchase history</span><h2 class="h3 mt-2 mb-0" id="orders-title">Your orders</h2></div>
                 <a class="small" href="contact.html">Need order help?</a>
               </div>
               <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
-                  <caption class="visually-hidden">
-                    Recent UrbanGent customer orders
-                  </caption>
-                  <thead class="table-light">
-                    <tr>
-                      <th scope="col">Order</th>
-                      <th scope="col">Date</th>
-                      <th scope="col">Status</th>
-                      <th scope="col" class="text-end">Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <strong>#UG1048</strong
-                        ><small class="d-block text-muted">2 items</small>
-                      </td>
-                      <td>02 Aug 2026</td>
-                      <td>
-                        <span class="badge text-bg-success">Delivered</span>
-                      </td>
-                      <td class="text-end">1,988,000 ₫</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <strong>#UG1063</strong
-                        ><small class="d-block text-muted">1 item</small>
-                      </td>
-                      <td>08 Aug 2026</td>
-                      <td>
-                        <span class="badge text-bg-warning">Processing</span>
-                      </td>
-                      <td class="text-end">1,590,000 ₫</td>
-                    </tr>
-                  </tbody>
+                  <caption class="visually-hidden">Orders belonging to the signed-in UrbanGent customer</caption>
+                  <thead class="table-light"><tr><th scope="col">Order</th><th scope="col">Date</th><th scope="col">Status</th><th scope="col" class="text-end">Total</th></tr></thead>
+                  <tbody id="recentOrdersBody"></tbody>
                 </table>
               </div>
+              <div class="empty-cart d-none mt-3" id="ordersEmptyState"><h3 class="h5">No orders yet</h3><p class="text-muted mb-3">Completed checkout orders will appear here.</p><a class="btn btn-dark btn-sm" href="index.html#products">Browse products</a></div>
             </section>
           </div>
         </div>
@@ -288,6 +188,7 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js?v=20260810"></script>
+    <script src="js/store.js?v=20260812-5"></script>
+    <script src="js/main.js?v=20260812-5"></script>
   </body>
 </html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Confirm UrbanGent delivery details and choose a secure payment method.">
+  <meta name="theme-color" content="#111827">
+  <title>Checkout | UrbanGent</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Sora:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260812-5">
+</head>
+<body data-requires-auth="true">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="announcement-bar">Free nationwide delivery on orders from 1,500,000 VND · Easy 14-day returns</div>
+  <nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" aria-label="UrbanGent home"><span class="brand-mark" aria-hidden="true">UG</span><span>UrbanGent</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto align-items-lg-center mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#products">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="cart.html">Cart <span class="cart-pill cart-count">0</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container position-relative" style="z-index:1">
+      <span class="section-eyebrow">Secure order preparation</span>
+      <h1 class="page-title">Checkout</h1>
+      <p class="section-copy mb-3">Confirm the recipient, delivery address, selected sizes and preferred payment method.</p>
+      <ol class="breadcrumb-clean" aria-label="Breadcrumb"><li><a href="index.html">Home</a></li><li><a href="cart.html">Cart</a></li><li aria-current="page">Checkout</li></ol>
+    </div>
+  </header>
+
+  <main id="main-content" class="section-space">
+    <div class="container">
+      <form id="checkoutForm" novalidate>
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-7">
+            <section class="form-card mb-4" aria-labelledby="delivery-title">
+              <span class="product-category">Delivery</span>
+              <h2 class="h3 mt-2 mb-4" id="delivery-title">Recipient details</h2>
+              <div class="row g-3">
+                <div class="col-md-6"><label class="form-label" for="checkoutName">Full name <span class="text-danger">*</span></label><input class="form-control" id="checkoutName" autocomplete="name" required><div class="invalid-feedback" data-feedback-for="checkoutName">Enter the recipient name.</div></div>
+                <div class="col-md-6"><label class="form-label" for="checkoutPhone">Phone number <span class="text-danger">*</span></label><input class="form-control" id="checkoutPhone" type="tel" autocomplete="tel" required><div class="invalid-feedback" data-feedback-for="checkoutPhone">Enter a valid Vietnamese phone number.</div></div>
+                <div class="col-12"><label class="form-label" for="checkoutEmail">Account email</label><input class="form-control" id="checkoutEmail" type="email" readonly><div class="invalid-feedback" data-feedback-for="checkoutEmail">Enter a valid email address.</div></div>
+                <div class="col-12"><label class="form-label" for="checkoutAddress">Complete delivery address <span class="text-danger">*</span></label><textarea class="form-control" id="checkoutAddress" rows="3" maxlength="180" autocomplete="street-address" required></textarea><div class="invalid-feedback" data-feedback-for="checkoutAddress">Enter a complete delivery address.</div><div class="form-text">This information is also saved to your own customer profile.</div></div>
+              </div>
+            </section>
+            <section class="form-card" aria-labelledby="review-items-title">
+              <div class="d-flex justify-content-between align-items-center gap-3 mb-2"><div><span class="product-category">Review</span><h2 class="h3 mt-2 mb-0" id="review-items-title">Items and sizes</h2></div><a class="small" href="cart.html">Edit cart</a></div>
+              <div id="checkoutItems" class="divide-list"></div>
+            </section>
+          </div>
+          <div class="col-lg-5">
+            <aside class="form-card cart-summary" aria-labelledby="checkout-summary-title">
+              <span class="product-category">Order details</span>
+              <h2 class="h3 mt-2 mb-4" id="checkout-summary-title">Payment summary</h2>
+              <div class="d-flex justify-content-between mb-3"><span class="text-muted">Subtotal</span><strong id="checkoutSubtotal">0 ₫</strong></div>
+              <div class="d-flex justify-content-between mb-3"><span class="text-muted">Delivery</span><strong id="checkoutDelivery">0 ₫</strong></div>
+              <hr>
+              <div class="d-flex justify-content-between align-items-end mb-4"><span class="h5 mb-0">Total</span><strong class="h4 mb-0" id="checkoutTotal">0 ₫</strong></div>
+              <fieldset class="payment-methods mb-4">
+                <legend class="form-label fw-bold mb-2">Payment method</legend>
+                <label class="payment-method-option" for="paymentCash">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="paymentCash" value="cash">
+                  <span class="payment-method-icon" aria-hidden="true">CA</span>
+                  <strong>Cash</strong>
+                </label>
+                <label class="payment-method-option" for="paymentCard">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="paymentCard" value="card">
+                  <span class="payment-method-icon" aria-hidden="true">CC</span>
+                  <strong>Card</strong>
+                </label>
+                <label class="payment-method-option is-selected" for="paymentBankTransfer">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="paymentBankTransfer" value="bank_transfer" checked>
+                  <span class="payment-method-icon" aria-hidden="true">QR</span>
+                  <strong>Bank transfer</strong>
+                </label>
+              </fieldset>
+              <div class="form-check mb-4"><input class="form-check-input" type="checkbox" id="confirmOrder" required><label class="form-check-label small" for="confirmOrder">I have checked the recipient, product sizes and order total.</label><div class="invalid-feedback" data-feedback-for="confirmOrder">Confirm that the order information is correct.</div></div>
+              <button class="btn btn-dark w-100 py-2" type="submit" id="checkoutSubmit">Create order and show VietQR</button>
+            </aside>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="py-4 d-flex flex-wrap justify-content-between gap-2 small"><span>&copy; <span class="current-year">2026</span> UrbanGent.</span><span><a href="contact.html">Need help?</a> · <a href="profile.html">Your profile</a></span></div></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/store.js?v=20260812-5"></script>
+  <script src="js/main.js?v=20260812-5"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Sora:wght@500;600;700&amp;display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260810-fonts">
+  <link rel="stylesheet" href="css/style.css?v=20260812-5">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -84,14 +84,9 @@
 
     <section class="section-space" aria-labelledby="categories-title">
       <div class="container">
-        <div class="row align-items-end mb-5 g-3">
-          <div class="col-lg-7">
-            <span class="section-eyebrow">Shop by category</span>
-            <h2 class="section-title mb-0" id="categories-title">Build a versatile wardrobe.</h2>
-          </div>
-          <div class="col-lg-5">
-            <p class="section-copy mb-0">Four foundations, designed to work together. Explore refined essentials for a clean and confident everyday look.</p>
-          </div>
+        <div class="mb-5">
+          <span class="section-eyebrow">Shop by category</span>
+          <h2 class="section-title mb-0" id="categories-title">Build a versatile wardrobe.</h2>
         </div>
         <div class="row g-4">
           <div class="col-sm-6 col-lg-3">
@@ -140,7 +135,6 @@
 
     <section id="products" class="section-space bg-light" aria-labelledby="products-title">
       <div class="container">
-        <div id="alertBox" class="alert-placeholder" aria-live="polite"></div>
         <div class="row align-items-end mb-4 g-3">
           <div class="col-lg-7">
             <span class="section-eyebrow">Curated essentials</span>
@@ -173,13 +167,17 @@
                 <img class="product-image" src="images/classic-white-shirt.jpg" alt="Folded premium cotton shirts in white, navy and burgundy" loading="lazy" width="1200" height="960">
                 <span class="product-badge">Best seller</span>
               </div>
-              <div class="p-4 d-flex flex-column" style="min-height: 230px">
+              <div class="p-4 d-flex flex-column" style="min-height: 292px">
                 <span class="product-category">Shirts</span>
                 <h3 class="h5 mt-2">Signature Cotton Shirt</h3>
                 <p class="text-muted small">A crisp cotton shirt with a modern regular fit and soft finish.</p>
-                <div class="mt-auto d-flex justify-content-between align-items-center gap-2">
-                  <span class="product-price">699,000 ₫</span>
-                  <button class="btn btn-dark btn-sm" type="button" onclick="addToCart(1)">Add to cart</button>
+                <div class="mt-auto">
+                  <div class="d-flex justify-content-between align-items-center gap-2"><span class="product-price">699,000 ₫</span><span class="text-success small fw-semibold">In stock</span></div>
+                  <div class="d-flex gap-2 mt-3">
+                    <label class="visually-hidden" for="size-1">Select a size for Signature Cotton Shirt</label>
+                    <select class="form-select form-select-sm" id="size-1"><option value="">Choose size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+                    <button class="btn btn-dark btn-sm text-nowrap" type="button" data-add-to-cart="1" data-size-select="size-1">Add to cart</button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -190,13 +188,17 @@
                 <img class="product-image" src="images/slim-black-trousers.jpg" alt="Man styling tailored black trousers with a white T-shirt" loading="lazy" width="1200" height="1500">
                 <span class="product-badge">New</span>
               </div>
-              <div class="p-4 d-flex flex-column" style="min-height: 230px">
+              <div class="p-4 d-flex flex-column" style="min-height: 292px">
                 <span class="product-category">Trousers</span>
                 <h3 class="h5 mt-2">Tailored Black Trousers</h3>
                 <p class="text-muted small">Tapered smart trousers with stretch comfort and a clean profile.</p>
-                <div class="mt-auto d-flex justify-content-between align-items-center gap-2">
-                  <span class="product-price">899,000 ₫</span>
-                  <button class="btn btn-dark btn-sm" type="button" onclick="addToCart(2)">Add to cart</button>
+                <div class="mt-auto">
+                  <div class="d-flex justify-content-between align-items-center gap-2"><span class="product-price">899,000 ₫</span><span class="text-success small fw-semibold">In stock</span></div>
+                  <div class="d-flex gap-2 mt-3">
+                    <label class="visually-hidden" for="size-2">Select a size for Tailored Black Trousers</label>
+                    <select class="form-select form-select-sm" id="size-2"><option value="">Choose size</option><option>29</option><option>30</option><option>31</option><option>32</option></select>
+                    <button class="btn btn-dark btn-sm text-nowrap" type="button" data-add-to-cart="2" data-size-select="size-2">Add to cart</button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -207,13 +209,17 @@
                 <img class="product-image" src="images/bomber-jacket.jpg" alt="Male model wearing a dark casual jacket" loading="lazy" width="1200" height="1500">
                 <span class="product-badge">Limited</span>
               </div>
-              <div class="p-4 d-flex flex-column" style="min-height: 230px">
+              <div class="p-4 d-flex flex-column" style="min-height: 292px">
                 <span class="product-category">Jackets</span>
                 <h3 class="h5 mt-2">Midnight Bomber Jacket</h3>
                 <p class="text-muted small">A lightweight structured layer with matte hardware and soft lining.</p>
-                <div class="mt-auto d-flex justify-content-between align-items-center gap-2">
-                  <span class="product-price">1,590,000 ₫</span>
-                  <button class="btn btn-dark btn-sm" type="button" onclick="addToCart(3)">Add to cart</button>
+                <div class="mt-auto">
+                  <div class="d-flex justify-content-between align-items-center gap-2"><span class="product-price">1,590,000 ₫</span><span class="text-success small fw-semibold">In stock</span></div>
+                  <div class="d-flex gap-2 mt-3">
+                    <label class="visually-hidden" for="size-3">Select a size for Midnight Bomber Jacket</label>
+                    <select class="form-select form-select-sm" id="size-3"><option value="">Choose size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+                    <button class="btn btn-dark btn-sm text-nowrap" type="button" data-add-to-cart="3" data-size-select="size-3">Add to cart</button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -223,13 +229,17 @@
               <div class="product-media">
                 <img class="product-image" src="images/leather-shoes.jpg" alt="Pair of brown suede Oxford brogue shoes" loading="lazy" width="1200" height="800">
               </div>
-              <div class="p-4 d-flex flex-column" style="min-height: 230px">
+              <div class="p-4 d-flex flex-column" style="min-height: 292px">
                 <span class="product-category">Shoes</span>
                 <h3 class="h5 mt-2">Suede Oxford Brogues</h3>
                 <p class="text-muted small">Classic wingtip shoes with a warm suede finish and cushioned sole.</p>
-                <div class="mt-auto d-flex justify-content-between align-items-center gap-2">
-                  <span class="product-price">1,290,000 ₫</span>
-                  <button class="btn btn-dark btn-sm" type="button" onclick="addToCart(4)">Add to cart</button>
+                <div class="mt-auto">
+                  <div class="d-flex justify-content-between align-items-center gap-2"><span class="product-price">1,290,000 ₫</span><span class="text-success small fw-semibold">In stock</span></div>
+                  <div class="d-flex gap-2 mt-3">
+                    <label class="visually-hidden" for="size-4">Select a size for Suede Oxford Brogues</label>
+                    <select class="form-select form-select-sm" id="size-4"><option value="">Choose size</option><option>39</option><option>40</option><option>41</option><option>42</option></select>
+                    <button class="btn btn-dark btn-sm text-nowrap" type="button" data-add-to-cart="4" data-size-select="size-4">Add to cart</button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -269,7 +279,6 @@
         <div class="col-lg-5">
           <h2 class="h4">UrbanGent</h2>
           <p class="mb-3" style="max-width: 460px">Modern menswear for confident everyday style. Designed as a responsive multi-page fashion shopping experience.</p>
-          <small class="photo-credit">Product photography sourced from Unsplash; full credits are listed in README.txt.</small>
         </div>
         <div class="col-6 col-lg-2">
           <h3 class="h6">Shop</h3>
@@ -297,12 +306,12 @@
       </div>
       <div class="footer-bottom py-3 d-flex flex-wrap justify-content-between gap-2 small">
         <span>&copy; <span class="current-year">2026</span> UrbanGent. All rights reserved.</span>
-        <span>HTML5 · CSS3 · JavaScript · Bootstrap 5</span>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js?v=20260810"></script>
+  <script src="js/store.js?v=20260812-5"></script>
+  <script src="js/main.js?v=20260812-5"></script>
 </body>
 </html>
